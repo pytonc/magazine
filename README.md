@@ -1,0 +1,4 @@
+magazine
+========
+
+Udacity Magazine project
