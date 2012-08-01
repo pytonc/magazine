@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Articles{% endblock %}
+
+{% block body_classes %} articles{% endblock %}
+
+{% block content %}
+    {% for article in articles %}
+        <article>
+            <heading>
+                <h1>{{ article.title|title }}</h1>
+            </heading>
+            {{ article.content }}
+        </article>
+    {% endfor %}
+{% endblock content %}

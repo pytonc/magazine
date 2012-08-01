@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% block meta_description %}{% endblock %}
+        {% block meta_author %}{% endblock %}
+
+        <title>{% block title %}{% endblock %}</title>
+
+        {% block css %}
+        <link rel="stylesheet" href="{{ STATIC_DIR }}css/main.css">
+        {% endblock %}
+
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        {% block js_head %}{% endblock %}
+    </head>
+
+    <body class="{% block body_classes %}{% endblock %}">
+
+        <div class="wrapper">
+            {% block body %}{% endblock %}
+        </div>
+        
+        {% block js_footer %}
+        <!--
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script>
+            window.jQuery || document.write('<script src="{{ STATIC_DIR }}js/jquery-1.7.1.min.js"><\/script>')
+        </script>
+        <script>
+            $(document).ready(function () {
+                // do stuff
+            });
+        </script>
+        -->
+        {% endblock %}
+
+    </body>
+</html>
