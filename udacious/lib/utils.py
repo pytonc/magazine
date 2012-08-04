@@ -7,14 +7,17 @@ SLUG_RE = re.compile(r'^[a-z0-9-]$')
 
 
 def valid_username(username):
+    ''' checks if a username is of the valid format (else returns None)'''
     return USERNAME_RE.match(username)
 
 
 def valid_password(password):
+    ''' checks if a password is of the valid format (else returns None)'''
     return PASSWORD_RE.match(password)
 
 
 def valid_email(email):
+    ''' checks if email is of the valid format (else returns None)'''
     try:
         return EMAIL_RE.match(email)
     except TypeError:
@@ -22,10 +25,12 @@ def valid_email(email):
 
 
 def valid_slug(slug):
+    ''' checks if slug is of the valid format (else returns None)'''
     return SLUG_RE.match(slug)
 
 
 def slugify(s):
+    ''' converts s to slug'''
     import unicodedata
     if type(s) == unicode:
         s = unicodedata.normalize('NFKD', s).encode('ascii', 'ignore')
@@ -34,6 +39,7 @@ def slugify(s):
 
 
 def escape_html(s):
+    ''' returns HTML-escaped s'''
     import cgi
     return cgi.escape(unicode(s), quote=True).encode('ascii', 'xmlcharrefreplace')
 
