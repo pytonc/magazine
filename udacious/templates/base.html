@@ -26,7 +26,7 @@
             {% block body %}{% endblock %}
         </div>
         
-        {% block js_footer %}
+        {% block js_footer %} <!-- Do we really want to allow js_footer part to be overridden? -->
         <!--
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script>
@@ -34,7 +34,9 @@
         </script>
         <script>
             $(document).ready(function () {
-                // do stuff
+                // key site stuff
+                {% block jQuery_extension %}// Extendable jQuery functionality
+                {% endblock %}
             });
         </script>
         -->
